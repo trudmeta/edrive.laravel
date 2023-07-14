@@ -1,0 +1,131 @@
+////
+/// @group _config.scss
+////
+
+
+
+// ==================================
+//  Брейкпоинты
+// ==================================
+
+/// Start [по умолчанию - не учитывается в карте брейкпоинтов]
+/// - iPhone 5 `320px`
+/// - Nokia Lumia `320px`
+/// - Nexus 5 `360px`
+/// - Nokia N9 `360px`
+/// - Galaxy S5 `360px`
+/// @type Size
+$st: 320px;
+
+/// Extra Small
+/// - Mobile M `375px`
+/// - iPhone 6 `375px`
+/// - Nexus 4 `384px`
+/// @type Size
+$xs: 375px;
+
+
+/// PageSpeed Insights - `mobile width` [по умолчанию - не учитывается в карте брейкпоинтов]
+/// - Nexus 6 `412px`
+/// - Mobile L `425px`
+/// - iPhone 6 plus `414px`
+/// @type Size
+$psw: 412px;
+
+/// Small
+/// - iPhone 4 (landscape) `480px`
+/// - Nokia Lumia (landscape) `533px`
+/// - iPhone 5 (landscape) `568px`
+/// @type Size
+$sm: 480px;
+
+/// Medium Small
+/// - Nexus 4 (landscape) `640px`
+/// - Nexus 5 (landscape) `640px`
+/// - Nokia N9 (landscape) `640px`
+/// - Galaxy S5 (landscape) `640px`
+/// - iPhone 6 (landscape) `667px`
+/// - Nexus 7 `700px`
+/// @type Size
+$ms: 640px;
+
+
+/// PageSpeed Insights - `mobile height` [по умолчанию - не учитывается в карте брейкпоинтов]
+/// - Nexus 6 (landscape) `732px`
+/// - iPhone 6 Plus (landscape) `736px`
+/// @type Size
+$psh: 732px;
+
+/// Medium
+/// - iPad `768px`
+/// - iPad Mini `768px`
+/// - Nexus 10 `800px`
+/// - Nexus 7 `900px`
+/// - Laptop (landscape) `950px`
+/// @type Size
+$md: 768px;
+
+/// Default / Normal, PageSpeed Insights destop width
+/// - Laptop `1024px`
+/// - iPad (landscape) `1024px`
+/// - iPad Mini (landscape) `1024px`
+/// @type Size
+$def: 1024px;
+
+/// Large
+/// - Laptop (landscape) `1280px`
+/// - Nexus 10 (landscape) `1280px`
+/// @type Size
+$lg: 1280px;
+
+/// Extra Large [по умолчанию - не учитывается в карте брейкпоинтов]
+/// - iPad Pro (landscape) `1366` ~ "15.6
+$xl: 1366px;
+
+/// Mega [по умолчанию - не учитывается в карте брейкпоинтов]
+/// - Laptop L `1440px`
+/// @type Size
+$mg: 1440px;
+
+/// Карта брейкпоинтов.
+/// Используеться при генерации, в цыкле,
+/// модификаторов под каждый медиа запрос
+///
+/// Как правило, результатом таких циклов
+///  - есть селекторы по схеме `{PREFIX}--$point{-SUFFIX}`,
+///  или, в случае с хелперами - `_$point-{PREFIX}`.
+///
+/// Пример на ячейке сетки -> основной селектор `.gcell`
+/// с модификаторами получаем:
+/// - .gcell--xs-6
+/// - .gcell--sm-4
+/// - .gcell--md-3
+/// - .gcell--def-2
+/// - .gcell--lg-1
+///
+/// Пример на хелпере `._show`:
+/// - ._xs-show
+/// - ._sm-show
+/// - ._md-show
+/// - ._def-show
+/// - ._lg-show
+///
+/// @type Map
+$breakpoints: (
+	// st: $st,
+	xs: $xs,
+	// psw: $psw,
+	sm: $sm,
+	ms: $ms,
+	md: $md,
+	def: $def,
+	lg: $lg,
+	// xl: $xl,
+	// mg: $mg,
+);
+
+//@import '_functions/em';
+//@import '_functions/rem';
+//@import '_functions/strip-units';
+@import '_mixins/media';
+

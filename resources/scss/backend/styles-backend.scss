@@ -1,0 +1,9 @@
+@import "@coreui/coreui/scss/coreui";
+@import '@coreui/icons';
+@import "multi.js/dist/multi.min.css";
+
+@import '../config';
+
+@import "../includes/button";
+@import "../includes/pagination";
+@import "styles";

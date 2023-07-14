@@ -1,0 +1,61 @@
+////
+/// @group _mixins/media.scss
+////
+
+/// Медиа запросы
+///
+/// @param {Number|Keyword} $value - значение брейкпоинта
+/// @param {Keyword} $direction [min] - "направление" медиа запроса
+@mixin media($value, $direction: min) {
+	$corrector: 0;
+	@if $direction == max {
+		$corrector: -1;
+	}
+	@if $value == iphone4 {
+		@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+	@else if $value == iphone5 {
+		@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+	@else if $value == iphone6 {
+		@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+	@else if $value == iphone6plus {
+		@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+			@content;
+		}
+	}
+	@else if $value == ipadmini {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+			@content;
+		}
+	}
+	@else if $value == ipad1 or $value == ipad2 {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+			@content;
+		}
+	}
+	@else if $value == ipad3 or $value == ipad4 {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+			@content;
+		}
+	}
+	@else {
+		@if map-has-key($breakpoints, $value) {
+			@media only screen and (#{$direction}-width: map-get($breakpoints, $value)+$corrector) {
+				@content;
+			}
+		}
+		@else {
+			@media only screen and (#{$direction}-width: $value+$corrector) {
+				@content;
+			}
+		}
+	}
+}
